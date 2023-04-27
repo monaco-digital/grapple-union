@@ -110,6 +110,7 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 			contactMe: false,
 			name,
 			recipient: email,
+			type: 'grapple',
 		};
 		submitDetails(submissionData);
 	};
