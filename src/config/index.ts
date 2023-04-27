@@ -42,8 +42,8 @@ const gaPropertyId = (): string => {
 
 const lambdaUrl = (): string =>
 	stage === 'prod'
-		? 'https://j8em4hk1r5.execute-api.eu-west-2.amazonaws.com/dev'
-		: 'https://j8em4hk1r5.execute-api.eu-west-2.amazonaws.com/dev';
+		? 'https://j8em4hk1r5.execute-api.eu-west-2.amazonaws.com/prod'
+		: 'https://j8em4hk1r5.execute-api.eu-west-2.amazonaws.com/prod';
 
 const config = {
 	API_URL: apiUrl(),
