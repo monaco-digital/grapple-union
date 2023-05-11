@@ -7,7 +7,7 @@ interface Props {
 
 const EndToEndStepper: React.FC<Props> = ({ step }: Props) => {
 	return (
-		<Box display={{ xs: 'none', md: 'block' }}>
+		<Box display={{ xs: 'none', md: 'none' }}>
 			<div className="end-to-end-stepper">
 				<Stepper activeStep={step} data-testid="stepper-component">
 					<Step>

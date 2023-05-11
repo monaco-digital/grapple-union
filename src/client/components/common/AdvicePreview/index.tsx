@@ -45,7 +45,7 @@ const AdvicePreview: FC = () => {
 	// }, []);
 
 	const handleNext = () => {
-		history.push('/start-legal-process'); // Go to step 2
+		history.push('/time-limit-calculator'); // Go to step 2
 	};
 
 	return (

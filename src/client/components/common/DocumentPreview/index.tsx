@@ -138,21 +138,7 @@ const DocumentPreview: FC = () => {
 	// triggerGAEvent(id);
 
 	const handleNext = () => {
-		switch (id) {
-			case '_WP':
-				history.push('/progress-legal-case'); // Go to step 3
-				break;
-			case '_ET':
-			case '_GR':
-			case '_RES_CD':
-			case '_RES_CO':
-			case '_RES_I':
-			case '_RES_KM':
-				history.push('/step/settlement');
-				break;
-			default:
-				break;
-		}
+		history.push('/preview/_ADV');
 	};
 
 	const headingText = () => {

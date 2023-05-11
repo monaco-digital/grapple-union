@@ -2,7 +2,8 @@
 	min-height: calc(100vh - 103px);
 	@apply .flex .flex-col;
 
-	padding: 0 2rem 1rem 2rem;
+	padding: 0 1.5rem 1.5rem 1.5rem;
+	margin-top: 3rem;
 
 	@screen md {
 		padding: 0 8rem 2rem 8rem;
