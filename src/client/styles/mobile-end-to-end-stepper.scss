@@ -8,4 +8,21 @@
 		margin: 0 0 0 0;
 		height: 0;
 	}
+
+	.MuiPaper-root {
+		justify-content: flex-end;
+		padding-left: 0;
+		padding-right: 0;
+		background: none;
+
+		.MuiBox-root {
+			padding-right: 0;
+			padding-left: 16px;
+		}
+		
+		.MuiMobileStepper-dots {
+			display: none;
+		}
+	}
+
 }

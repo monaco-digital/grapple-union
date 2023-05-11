@@ -57,7 +57,7 @@ const StatementSelect: React.FC = () => {
 	};
 
 	const enterLetterPreviewMode = async () => {
-		history.push('/preview/_ADV');
+		history.push('/preview/_GR');
 		await dispatch(selectParagraphsCall());
 	};
 
@@ -79,7 +79,7 @@ const StatementSelect: React.FC = () => {
 	});
 
 	if (!statements.some(s => s)) {
-		return <Redirect to="/preview/_ADV" />;
+		return <Redirect to="/preview/_GR" />;
 	}
 
 	return (

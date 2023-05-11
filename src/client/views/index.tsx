@@ -18,6 +18,7 @@ import StatementSelect from '../components/common/StatementSelect';
 import Step2Intro from '../components/common/Step2Intro';
 import Step3Intro from '../components/common/Step3Intro';
 import AllQuestions from '../components/common/AllQuestions';
+import TimeLimitCalculator from '../components/common/TimeLimitCalculator';
 import GrievanceLetterExplanation from '../components/common/GrievanceLetterExplanation';
 import EmploymentTribunalExplanation from '../components/common/EmploymentTribunalExplanation';
 import RespondToEmployer from '../components/common/RespondToEmployer';
@@ -130,6 +131,9 @@ const Main: FC = () => {
 				<div>
 					<div>
 						<Switch>
+							<Route path="/time-limit-calculator">
+								<TimeLimitCalculator />
+							</Route>
 							<Route path="/questions/:id">
 								<Questions />
 							</Route>
