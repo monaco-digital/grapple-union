@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 const adviceParagraphs = [
 	{
 		id: nanoid(),
-		text: '## Advice\n\nGrapple will advise whether or not you have a potential case against your employer, based on the information you’ve provided. Grapple cannot advise on the strength of your case, but it will give you some pointers so that you can make an educated guess.\n\nIf you do have a case, it’s important to gather evidence as your employer may deny wrongdoing.',
+		text: '## Advice\n\nIf you do have a case, it’s important to gather evidence as your employer may deny wrongdoing.',
 		topicsOneOf: '',
 		topicsAllOf: '',
 		topicsNoneOf: '',
