@@ -19,10 +19,6 @@ const PreviewLetterExplanation: React.FC<Props> = ({ letter }: Props) => {
 					You have generated a grievance letter. First, download it to to complete later. Once complete, you can send it
 					to your employer.
 				</p>
-				<p>
-					When your ready, you can move onto the next step to request assistance with any settlement offer that you have
-					received.
-				</p>
 			</div>
 		),
 		_ET: (
