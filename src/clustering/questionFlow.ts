@@ -187,7 +187,7 @@ export const allQuestions: Question[] = [
 	},
 	{
 		id: 7,
-		prerequisites: [],
+		prerequisites: ['OBT'],
 		text: 'Other issues',
 		subtext: 'If any of these apply, choose one or more',
 		minAnswers: 0,
