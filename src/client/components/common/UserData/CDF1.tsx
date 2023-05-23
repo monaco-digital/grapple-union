@@ -136,7 +136,7 @@ export const CDF1: React.FC<Props> = ({ previewType }: Props) => {
 			</div>
 			<form id="cdf1-form" noValidate onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-3 hidden">
 				<Box alignSelf="center">
-					<img alt="Monaco Solicitors" src={logo1} width="200px" />
+					<img alt="grapple" src={logo1} width="200px" />
 				</Box>
 				<Typography className="text-center" variant="h4" style={{ marginTop: '30px' }}>
 					Request a callback about your case
