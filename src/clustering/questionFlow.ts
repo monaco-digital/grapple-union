@@ -249,7 +249,7 @@ export const allQuestions: Question[] = [
 	},
 	{
 		id: 8,
-		prerequisites: [],
+		prerequisites: ['ORT'],
 		text: 'Did you ever complain to your employer about discrimination, either against yourself or anybody else?',
 		subtext: '',
 		minAnswers: 1,

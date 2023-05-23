@@ -13,7 +13,7 @@ const TimeLimitCalculator: React.FC = () => {
 	const { register, handleSubmit } = useForm<FormInputs>();
 	const [selectedDate, setSelectedDate] = useState('');
 	const handleNext = () => {
-		history.push('/time-limit-calculator'); // Go to step 2
+		history.push('/grievance-explanation');
 	};
 	const onSubmit = ({ date }) => {
 		const dates = new Date(date);

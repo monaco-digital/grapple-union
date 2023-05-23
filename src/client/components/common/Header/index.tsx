@@ -18,7 +18,7 @@ const Header: FC = () => {
 	return (
 		<div className="header" data-testid="header-component">
 			<Link href="https://www.grapple.uk/?from=vl-ui&source=mobile" target="_blank" rel="noreferrer">
-				<img className="header__logo-1" alt="Monaco Solicitors" src={logo1} />
+				<img className="header__logo-1" alt="grapple" src={logo1} />
 			</Link>
 			<div className="header__breadcrumb">
 				<a className="header__breadcrumb__text" target="_blank" href="https://www.grapple.uk/" rel="noreferrer">
@@ -35,9 +35,6 @@ const Header: FC = () => {
 				</Button> */}
 			</div>
 			<div className="header_mobile-buttons">
-				<IconButton onClick={goToCDF} color="primary">
-					<PhoneCallbackIcon fontSize="large" />
-				</IconButton>
 				<IconButton onClick={() => setMenuIsVisible(true)}>
 					<MenuIcon fontSize="large" />
 				</IconButton>
