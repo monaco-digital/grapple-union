@@ -15,6 +15,7 @@ const GrievanceLetterExplanation: React.FC = () => {
 		<div className="flex-col w-full grievance-explanation">
 			<EndToEndStepper step={3} />
 			<div className="step-intro">
+				<h2>Grievance appeals</h2>
 				<Typography variant="body1" paragraph>
 					If you have lodged a grievance and received a response from your employer rejecting your complaint, then you
 					should have been given the opportunity to lodge a grievance appeal.
@@ -26,9 +27,10 @@ const GrievanceLetterExplanation: React.FC = () => {
 				<Typography variant="body1">
 					<p>The most common reasons to appeal a grievance include:</p>
 					<ul className="list-disc p-4">
-						<li>Worded specifically for your situation</li>
-						<li>Just complete the missing information</li>
-						<li>Your employer will think you&apos;ve hired real lawyers!</li>
+						<li>Employer didn’t interview witnesses.</li>
+						<li>Employer didn’t take account of some of the points I raised.</li>
+						<li>Employer didn’t take account of the documentary evidence provided.</li>
+						<li>Outcome unfair in all the circumstances.</li>
 					</ul>
 				</Typography>
 				<Typography variant="body1" paragraph>
