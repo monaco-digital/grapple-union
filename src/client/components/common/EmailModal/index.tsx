@@ -1,9 +1,9 @@
 import React, { FC, useState, useEffect } from 'react';
-import { TextField, Button, InputLabel, FormControl, Select, FormHelperText, Box, Typography } from '@material-ui/core';
+import { TextField, Button, Box, Typography } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { CaseTopic, Advice } from 'api/vl/models';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import AppState from '../../../../data/AppState';
 import { SessionDocument } from '../../../../types/SessionDocument';
 import { getDocumentText } from '../../../../utils/renderDocument';
@@ -44,7 +44,6 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 		register,
 		handleSubmit,
 		errors,
-		control,
 		watch,
 		formState: { isSubmitting },
 	} = useForm();
@@ -90,13 +89,14 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 		setData(data);
 	}, [sessionDocument, selectedTopics, adviceParagraphs, data, previewType]);
 
-	const onSubmit = ({ name, email, contact }) => {
+	const onSubmit = ({ name, email, number, contact }) => {
 		const contactMe = contact === 'true';
 		dispatch(
 			updateUserData({
 				...data,
 				contactMe,
 				name,
+				number,
 				recipient: email,
 			}),
 		);
@@ -109,6 +109,7 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 			...data,
 			contactMe: false,
 			name,
+			number,
 			recipient: email,
 			type: 'grapple',
 		};
@@ -126,7 +127,7 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 					Send this to me
 				</Typography>
 				<p className="self-center text-center">
-					Enter your name and email address below and we&apos;ll send this to you for free
+					Enter your name, email address and union membership number below and we&apos;ll send this to you for free
 				</p>
 
 				<TextField
@@ -152,6 +153,28 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 					helperText={errors.email?.message}
 					disabled={isSubmitting}
 					inputRef={register({ required: 'Please enter your email address' })}
+				/>
+
+				<TextField
+					id="number"
+					name="number"
+					label="Union membership number"
+					variant="filled"
+					fullWidth
+					error={Boolean(errors.number)}
+					helperText={errors.number?.message}
+					disabled={isSubmitting}
+					inputRef={register({
+						required: 'Please enter your union membership number',
+						minLength: {
+							value: 8,
+							message: 'Please enter a valid membership number',
+						},
+						maxLength: {
+							value: 8,
+							message: 'Please enter a valid membership number',
+						},
+					})}
 				/>
 
 				{/* <FormControl fullWidth error={Boolean(errors.contact)} variant="filled">
