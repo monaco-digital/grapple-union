@@ -96,7 +96,7 @@
 		"eslint-plugin-prettier": "^3.4.0",
 		"eslint-plugin-react": "^7.23.2",
 		"eslint-plugin-react-hooks": "^4.2.0",
-		"eslint-plugin-testing-library": "^4.10.1",
+		"eslint-plugin-testing-library": "^5.11.0",
 		"history": "^4.10.1",
 		"husky": "^7.0.1",
 		"install": "^0.13.0",
