@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { TextField, Button, Box, Typography } from '@material-ui/core';
+import { TextField, Button, Box, Typography, FormControlLabel, Checkbox } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { CaseTopic, Advice } from 'api/vl/models';
@@ -48,6 +48,7 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 		formState: { isSubmitting },
 	} = useForm();
 	const watchContact = watch('contact', '');
+	const [termsAccepted, setTermsAccepted] = useState(false);
 
 	const dispatch = useDispatch();
 	const [data, setData] = useState<Data>({
@@ -177,6 +178,25 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 					})}
 				/>
 
+				<FormControlLabel
+					control={
+						<Checkbox
+							size="small"
+							checked={termsAccepted}
+							onChange={event => setTermsAccepted(event.target.checked)}
+							color="secondary"
+							name="termsAccepted"
+							inputRef={register({ required: true })}
+						/>
+					}
+					label={
+						<span className="terms-label">
+							I agree to the <strong>terms & conditions</strong> and <strong>privacy policy</strong>
+						</span>
+					}
+				/>
+				{errors.termsAccepted && <span className="error">Please accept the terms and conditions</span>}
+
 				{/* <FormControl fullWidth error={Boolean(errors.contact)} variant="filled">
 					<InputLabel variant="filled" htmlFor="contact">
 						Request a callback
@@ -198,7 +218,13 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 				</FormControl> */}
 
 				<div className="emailModal__section-end">
-					<Button variant="contained" size="large" color="secondary" type="submit" disabled={isSubmitting}>
+					<Button
+						variant="contained"
+						size="large"
+						color="secondary"
+						type="submit"
+						disabled={isSubmitting || !termsAccepted}
+					>
 						{watchContact === 'true' ? 'Next' : 'Send now'}
 					</Button>
 				</div>
