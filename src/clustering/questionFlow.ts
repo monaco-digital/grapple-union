@@ -249,7 +249,7 @@ export const allQuestions: Question[] = [
 	},
 	{
 		id: 8,
-		prerequisites: ['ORT'],
+		prerequisites: [],
 		text: 'Did you ever complain to your employer about discrimination, either against yourself or anybody else?',
 		subtext: '',
 		minAnswers: 1,
@@ -299,6 +299,30 @@ export const getNextQuestion = (
 		if (prerequisitesMet && !answeredAlready) {
 			nextQuestion = allQuestions[index];
 		}
+		const includesWorDR = selectedTopicIds.some(
+			value =>
+				value === 'W' ||
+				value === 'DR' ||
+				value === 'DS' ||
+				value === 'DP' ||
+				value === 'DM' ||
+				value === 'DD' ||
+				value === 'DA' ||
+				value === 'DRn' ||
+				value === 'DPl' ||
+				value === 'DSy' ||
+				value === 'DG' ||
+				value === 'DMe' ||
+				value === 'ORT',
+		);
+		if (currentQuestionId === 7 && nextQuestion && nextQuestion.id === 8) {
+			if (includesWorDR) {
+				nextQuestion = allQuestions[index];
+			} else {
+				nextQuestion = null;
+			}
+		}
+
 		index += 1;
 	}
 

@@ -121,7 +121,7 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 		<form className="flex justify-center" onSubmit={handleSubmit(onSubmit)}>
 			<div className="emailModal space-y-5 flex flex-col">
 				<Box alignSelf="center">
-					<img alt="Monaco Solicitors" src={logo1} width="200px" />
+					<img alt="Grapple" src={logo1} width="200px" />
 				</Box>
 
 				<Typography className="text-center" variant="h4">
