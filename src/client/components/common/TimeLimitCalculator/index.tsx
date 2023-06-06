@@ -30,7 +30,7 @@ const TimeLimitCalculator: React.FC = () => {
 
 	return (
 		<div className="time-limit-calculator">
-			<div>
+			<div className="letter-preview">
 				<h2>Time limit calculator</h2>
 				<p>So that you don’t miss an employment tribunal claim opportunity, please enter the Date of first incident.</p>
 				<div className="select-date">

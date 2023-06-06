@@ -1,5 +1,5 @@
 import { ApolloProvider } from '@apollo/client';
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import TagManager from 'react-gtm-module';
 
@@ -16,6 +16,18 @@ const App: FC = () => {
 
 	// ReactGA.initialize(GA_PROPERTY_ID);
 	ReactGA.pageview(window.location.pathname + window.location.search);
+
+	useEffect(() => {
+		const redirectToHomepage = () => {
+			window.location.href = '/'; // Replace with your homepage URL
+		};
+
+		window.addEventListener('beforeunload', redirectToHomepage);
+
+		return () => {
+			window.removeEventListener('beforeunload', redirectToHomepage);
+		};
+	}, []);
 
 	return (
 		<>

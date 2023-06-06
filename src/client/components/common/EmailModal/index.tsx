@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { TextField, Button, Box, Typography, FormControlLabel, Checkbox } from '@material-ui/core';
+import { TextField, Button, Box, Typography, FormControlLabel, Checkbox, Link } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { CaseTopic, Advice } from 'api/vl/models';
@@ -191,7 +191,11 @@ const EmailModal: FC<Props> = ({ previewType }: Props) => {
 					}
 					label={
 						<span className="terms-label">
-							I agree to the <strong>terms & conditions</strong> and <strong>privacy policy</strong>
+							Agree{' '}
+							<Link href="/terms" target="_blank">
+								terms and conditions
+							</Link>
+							, including that a copy of this document will be sent to my union
 						</span>
 					}
 				/>
