@@ -55,7 +55,9 @@
 	"eslintConfig": {
 		"extends": "react-app"
 	},
-	
+	"devDependencies": {
+		"npm": "^7.20.0"
+	},
 	"lint-staged": {
 		"src/*.{js,ts,jsx,tsx}": "eslint --cache --fix"
 	}
