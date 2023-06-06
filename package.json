@@ -47,7 +47,7 @@
 	"scripts": {
 		"build:tailwind": "postcss src/client/styles/main.scss -o src/client/styles/main.output.css",
 		"watch:tailwind": "chokidar 'client/src/**/*.css' 'src/**/*.scss' --ignore src/client/styles/main.output.css -c 'npm run build:tailwind'",
-		"start:react": "react-scripts start",
+		"start:react": "react-scripts --openssl-legacy-provider start",
 		"start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
 		"prebuild": "run-s build:tailwind",
 		"build": "react-scripts --openssl-legacy-provider build",
