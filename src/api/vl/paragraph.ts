@@ -18,7 +18,7 @@ interface ParagraphData {
 
 export const getAllParagraphs = async (): Promise<TemplateParagraph[]> => {
 	try {
-		const result = await client.query<ParagraphData, void>({
+		const result = await client.query<ParagraphData>({
 			query: GET_ALL_PARAGRAPHS,
 		});
 		const { data, errors } = result;

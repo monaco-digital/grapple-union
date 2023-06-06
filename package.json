@@ -41,11 +41,23 @@
 		"react-scripts": "^4.0.3",
 		"react-window": "^1.8.5",
 		"redux-thunk": "^2.3.0",
-		"tailwindcss": "^3.3.2",
+		"tailwindcss": "^1.9.6",
 		"typescript": "^4.3.5"
 	},
 	"scripts": {
-		"build": "react-scripts build"
+		"build:tailwind": "postcss src/client/styles/main.scss -o src/client/styles/main.output.css",
+		"watch:tailwind": "chokidar 'client/src/**/*.css' 'src/**/*.scss' --ignore src/client/styles/main.output.css -c 'npm run build:tailwind'",
+		"start:react": "react-scripts start",
+		"start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+		"prebuild": "run-s build:tailwind",
+		"build": "react-scripts build",
+		"lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"deploy:dev": "REACT_APP_STAGE=dev && yarn build && amplify env checkout dev && amplify publish",
+		"deploy:prod": "REACT_APP_STAGE=prod && yarn build && amplify env checkout prod && amplify publish",
+		"postinstall": "husky install",
+		"prepare": "husky install"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
@@ -72,7 +84,7 @@
 		"@types/lodash": "^4.14.171",
 		"@types/react-transition-group": "^4.4.2",
 		"@typescript-eslint/eslint-plugin": "^4.28.4",
-		"autoprefixer": "^10.4.14",
+		"autoprefixer": "^9.8.6",
 		"axios-mock-adapter": "^1.19.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^7.31.0",
@@ -93,8 +105,8 @@
 		"jest-localstorage-mock": "^2.4.12",
 		"lint-staged": "^11.1.1",
 		"npm": "^7.20.0",
-		"postcss": "^8.4.24",
-		"postcss-cli": "^8.0",
+		"postcss": "^8.1.8",
+		"postcss-cli": "^7.1.1",
 		"postcss-comment": "^2.0.0",
 		"postcss-import": "^12.0.1",
 		"postcss-nested": "^4.2.3",
