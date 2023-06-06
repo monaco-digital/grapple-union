@@ -50,11 +50,13 @@
 		"start:react": "react-scripts start",
 		"start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
 		"prebuild": "run-s build:tailwind",
-		"build": "react-scripts build",
-		"lint": "eslint ./src --ext .js,.ts,.jsx,.tsx",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"postinstall": "husky install",
-		"prepare": "husky install"
+		"build": "react-scripts build"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	
+	"lint-staged": {
+		"src/*.{js,ts,jsx,tsx}": "eslint --cache --fix"
 	}
 }
