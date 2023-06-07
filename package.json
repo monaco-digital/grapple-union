@@ -137,5 +137,9 @@
 	},
 	"lint-staged": {
 		"src/*.{js,ts,jsx,tsx}": "eslint --cache --fix"
+	},
+	"engines": {
+		"node": "14.17.0",
+		"npm": "7.24.0"
 	}
 }
