@@ -32,7 +32,7 @@ const App: FC = () => {
 	return (
 		<>
 			<ApolloProvider client={client}>
-				<Router basename="/">
+				<Router>
 					<Client />
 				</Router>
 			</ApolloProvider>
