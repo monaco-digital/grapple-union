@@ -14,9 +14,9 @@ const Disclaimer: FC = () => {
 		'Grapple makes every attempt to ensure the factual accuracy of website content at the time of publication. Any guidance or tips given are for information only. Nothing should be taken as legal advice or as forming a lawyer-client relationship. If you require legal representation please get in touch and we will refer you to one of our friendly law firm partners. ';
 
 	return (
-		<div className="disclaimer">
+		<>
 			{(isPreview || isHelp || isTerms || isCDF || isStepCDF) && (
-				<>
+				<div className="disclaimer">
 					<Divider />
 					<Grid container justifyContent="space-between">
 						<Grid item xs={12} className="disclaimer__text">
@@ -39,9 +39,9 @@ const Disclaimer: FC = () => {
 							</Typography>
 						</Grid>
 					</Grid>
-				</>
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

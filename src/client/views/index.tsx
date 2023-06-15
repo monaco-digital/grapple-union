@@ -10,6 +10,7 @@ import Header from '../components/common/Header';
 import Questions from '../components/common/Questions';
 import { setAllTopics } from '../../data/topicDataSlice';
 import { updateSuggestedParagraphs } from '../../data/sessionDataSlice';
+import logo1 from '../assets/img/Unite-logo-bottom-right.svg';
 
 import Help from './Help';
 import { getAllCaseTopics } from '../../api/vl';
@@ -197,6 +198,9 @@ const Main: FC = () => {
 							</Route>
 						</Switch>
 					</div>
+				</div>
+				<div className="footer-section">
+					<img alt="Grapple" src={logo1} width="200px" />
 					<div>
 						<Disclaimer />
 					</div>

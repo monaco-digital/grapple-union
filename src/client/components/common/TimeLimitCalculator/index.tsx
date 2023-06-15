@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import { TextField, Button, FormControl, Select, FormHelperText, Box, Typography } from '@material-ui/core';
+import { TextField, Button } from '@material-ui/core';
 import ActionBar from '../ActionBar';
 
 type FormInputs = {
@@ -15,14 +15,32 @@ const TimeLimitCalculator: React.FC = () => {
 	const handleNext = () => {
 		history.push('/grievance-explanation');
 	};
+
+	function addThreeMonthsToDate(inputDate) {
+		// Create a new Date object based on the input date
+		const date = new Date(inputDate);
+
+		// Get the current day of the month
+		const day = date.getDate();
+
+		// Add 3 months to the date
+		date.setMonth(date.getMonth() + 3);
+
+		// Adjust the date to the last day of the month if necessary
+		if (date.getDate() < day) {
+			date.setDate(0);
+		}
+
+		date.setDate(date.getDate() - 1); // Subtract 1 day from the final date
+
+		return date;
+	}
+
 	const onSubmit = ({ date }) => {
-		const dates = new Date(date);
-		dates.setMonth(dates.getMonth() + 3);
-		dates.setDate(dates.getDate() - 1);
-		const datess = new Date(dates);
-		const mnth = `0${datess.getMonth() + 1}`.slice(-2);
-		const day = `0${datess.getDate()}`.slice(-2);
-		setSelectedDate([day, mnth, datess.getFullYear()].join('-'));
+		const dates = addThreeMonthsToDate(date);
+		const mnth = `0${dates.getMonth() + 1}`.slice(-2);
+		const day = `0${dates.getDate()}`.slice(-2);
+		setSelectedDate([day, mnth, dates.getFullYear()].join('-'));
 	};
 	const reset = () => {
 		setSelectedDate('');
@@ -63,7 +81,7 @@ const TimeLimitCalculator: React.FC = () => {
 						</a>
 						):
 					</p>
-					<TextField id="selected-date" name="selected-date" variant="filled" disabled value={selectedDate} />
+					<p className="selected-date-display">{selectedDate}</p>
 				</div>
 				<div className="footer">
 					<p>
