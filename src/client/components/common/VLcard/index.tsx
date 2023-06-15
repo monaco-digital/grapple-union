@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import classNames from 'classnames';
 import { Fab } from '@material-ui/core';
-import DownloadIcon from '@material-ui/icons/ArrowDownward';
+import DownloadIcon from '@material-ui/icons/GetApp';
 import { useHistory, useParams } from 'react-router-dom';
 
 type VLCardProps = {
